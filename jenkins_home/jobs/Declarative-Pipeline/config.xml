@@ -1,0 +1,43 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<flow-definition plugin="workflow-job@1551.v7320b_88b_d5e6">
+  <actions>
+    <org.jenkinsci.plugins.pipeline.modeldefinition.actions.DeclarativeJobAction plugin="pipeline-model-definition@2.2273.v643f36ed9e94"/>
+    <org.jenkinsci.plugins.pipeline.modeldefinition.actions.DeclarativeJobPropertyTrackerAction plugin="pipeline-model-definition@2.2273.v643f36ed9e94">
+      <jobProperties/>
+      <triggers/>
+      <parameters/>
+      <options/>
+    </org.jenkinsci.plugins.pipeline.modeldefinition.actions.DeclarativeJobPropertyTrackerAction>
+  </actions>
+  <description>test declarative-pipeline</description>
+  <keepDependencies>false</keepDependencies>
+  <properties/>
+  <definition class="org.jenkinsci.plugins.workflow.cps.CpsFlowDefinition" plugin="workflow-cps@4209.v83c4e257f1e9">
+    <script>pipeline {
+    agent any // ใช้ agent ใดก็ได้
+    stages {
+        stage(&apos;Build&apos;) {
+            steps {
+                echo &apos;Building...&apos;
+                // คำสั่งสำหรับการ build เช่น การ compile โค้ด
+            }
+        }
+        stage(&apos;Test&apos;) {
+            steps {
+                echo &apos;Testing...&apos;
+                // คำสั่งสำหรับการทดสอบ เช่น การรัน unit tests
+            }
+        }
+        stage(&apos;Deploy&apos;) {
+            steps {
+                echo &apos;Deploying...&apos;
+                // คำสั่งสำหรับการ deploy เช่น การส่งโค้ดไปยังเซิร์ฟเวอร์
+            }
+        }
+    }
+}</script>
+    <sandbox>true</sandbox>
+  </definition>
+  <triggers/>
+  <disabled>false</disabled>
+</flow-definition>
